@@ -1,8 +1,5 @@
 package com.example.instrumentos_api.Controllers;
 
-// src/main/java/com/example/instrumentos/InstrumentoController.java
-
-
 import com.example.instrumentos_api.Entities.Instrumento;
 import com.example.instrumentos_api.Services.InstrumentoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +23,20 @@ public class InstrumentoController {
     @GetMapping("/{id}")
     public Instrumento getInstrumentoById(@PathVariable Long id) {
         return instrumentoService.getInstrumentoById(id);
+    }
+
+    @PostMapping
+    public Instrumento createInstrumento(@RequestBody Instrumento instrumento) {
+        return instrumentoService.createInstrumento(instrumento);
+    }
+
+    @PutMapping("/{id}")
+    public Instrumento updateInstrumento(@PathVariable Long id, @RequestBody Instrumento instrumentoDetails) {
+        return instrumentoService.updateInstrumento(id, instrumentoDetails);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteInstrumento(@PathVariable Long id) {
+        instrumentoService.deleteInstrumento(id);
     }
 }

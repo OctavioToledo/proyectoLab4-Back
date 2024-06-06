@@ -24,8 +24,23 @@ public class InstrumentoServiceImpl implements InstrumentoService {
     }
 
     @Override
-    public Instrumento saveInstrumento(Instrumento instrumento) {
+    public Instrumento createInstrumento(Instrumento instrumento) {
         return instrumentoRepository.save(instrumento);
+    }
+
+    @Override
+    public Instrumento updateInstrumento(Long id, Instrumento instrumento) {
+        Instrumento existingInstrumento = instrumentoRepository.findById(id).orElse(null);
+        if (existingInstrumento != null) {
+            existingInstrumento.setInstrumento(instrumento.getInstrumento());
+            existingInstrumento.setModelo(instrumento.getModelo());
+            existingInstrumento.setPrecio(instrumento.getPrecio());
+            existingInstrumento.setCategoria(instrumento.getCategoria());
+            existingInstrumento.setCostoEnvio(instrumento.getCostoEnvio());
+            existingInstrumento.setDescripcion(instrumento.getDescripcion());
+            return instrumentoRepository.save(existingInstrumento);
+        }
+        return null;
     }
 
     @Override
