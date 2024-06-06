@@ -27,6 +27,7 @@ public class Instrumento {
     private int cantidadVendida;
     private String descripcion;
     private String categoria;
+    private boolean eliminado;
 
     // Getters and setters
 }

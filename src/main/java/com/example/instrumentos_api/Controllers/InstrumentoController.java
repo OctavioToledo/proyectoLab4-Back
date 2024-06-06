@@ -35,8 +35,15 @@ public class InstrumentoController {
         return instrumentoService.updateInstrumento(id, instrumentoDetails);
     }
 
-    @DeleteMapping("/{id}")
+    /*@DeleteMapping("/{id}")
     public void deleteInstrumento(@PathVariable Long id) {
         instrumentoService.deleteInstrumento(id);
-    }
+    }*/
+   @DeleteMapping("/{id}")
+   public void deleteInstrumento(@PathVariable Long id) {
+       Instrumento instrumento = instrumentoService.getInstrumentoById(id);
+       instrumento.setEliminado(true);
+       instrumentoService.updateInstrumento(id, instrumento);
+   }
+
 }
