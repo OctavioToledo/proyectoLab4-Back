@@ -1,7 +1,7 @@
 package com.example.instrumentos_api;
 
 import com.example.instrumentos_api.Entities.Instrumento;
-import com.example.instrumentos_api.Services.InstrumentoServiceImpl;
+import com.example.instrumentos_api.Services.impl.InstrumentoServiceImpl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

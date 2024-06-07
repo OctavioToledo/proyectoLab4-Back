@@ -1,7 +1,8 @@
-package com.example.instrumentos_api.Services;
+package com.example.instrumentos_api.Services.impl;
 
 import com.example.instrumentos_api.Entities.Instrumento;
 import com.example.instrumentos_api.Repositories.InstrumentoRepository;
+import com.example.instrumentos_api.Services.InstrumentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
