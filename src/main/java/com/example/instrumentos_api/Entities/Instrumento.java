@@ -29,6 +29,7 @@ public class Instrumento {
     private String categoria;
     private boolean eliminado;
 
+
     // Getters and setters
 }
 
